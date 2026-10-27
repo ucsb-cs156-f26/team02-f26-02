@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-02
 owner: ucsb-cs156-f26
 repo_name: team02-f26-02
-pull_requests: []
+pull_requests: [{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"codex/recommendation-request-backend","number":62,"title":"Copy RecommendationRequest backend CRUD API from team01","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/62"}]
