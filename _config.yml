@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-02
 owner: ucsb-cs156-f26
 repo_name: team02-f26-02
-pull_requests: [{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"codex/recommendation-request-fixtures","number":67,"title":"Add RecommendationRequest fixtures","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/67"}]
+pull_requests: [{"author":{"id":"U_kgDODg22iw","is_bot":false,"login":"timothyhu1","name":""},"headRefName":"th-MenuItemReview-table","number":78,"title":"th - added menu item review table","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/78"},{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"codex/recommendation-request-fixtures","number":67,"title":"Add RecommendationRequest fixtures","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/67"}]
