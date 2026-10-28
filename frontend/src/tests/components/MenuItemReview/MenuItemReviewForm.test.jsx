@@ -77,8 +77,9 @@ describe("MenuItemReviewForm tests", () => {
     //Testing min
     fireEvent.change(starsField, { target: { value: "0" } });
     fireEvent.click(submitButton);
-    expect(await screen.findByText(/Stars must be between 1 and 5/)).toBeInTheDocument();
-
+    expect(
+      await screen.findByText(/Stars must be between 1 and 5/),
+    ).toBeInTheDocument();
   });
 
   test("Stars cannot be greater than 5", async () => {
@@ -94,7 +95,9 @@ describe("MenuItemReviewForm tests", () => {
     //Testing max
     fireEvent.change(starsField, { target: { value: "6" } });
     fireEvent.click(submitButton);
-    expect(await screen.findByText(/Stars must be between 1 and 5/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Stars must be between 1 and 5/),
+    ).toBeInTheDocument();
   });
 
   test("Correct Error messsages on missing input", async () => {
@@ -168,7 +171,5 @@ describe("MenuItemReviewForm tests", () => {
     fireEvent.click(cancelButton);
 
     await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(-1));
-
-    
   });
 });
