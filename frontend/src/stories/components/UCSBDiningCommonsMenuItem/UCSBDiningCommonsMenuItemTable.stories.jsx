@@ -3,7 +3,7 @@ import UCSBDiningCommonsMenuItemTable from "main/components/UCSBDiningCommonsMen
 import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
 import { http, HttpResponse } from "msw";
-//test
+
 export default {
   title: "components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemTable",
   component: UCSBDiningCommonsMenuItemTable,
