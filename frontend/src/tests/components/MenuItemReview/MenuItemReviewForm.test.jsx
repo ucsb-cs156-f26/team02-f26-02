@@ -64,6 +64,39 @@ describe("MenuItemReviewForm tests", () => {
     fireEvent.click(submitButton);
   });
 
+  test("Correct Error message when stars is not between 1 and 5", async () => {
+    render(
+      <Router>
+        <MenuItemReviewForm />
+      </Router>,
+    );
+    await screen.findByTestId("MenuItemReviewForm-stars");
+    const starsField = screen.getByTestId("MenuItemReviewForm-stars");
+    const submitButton = screen.getByTestId("MenuItemReviewForm-submit");
+
+    //Testing min
+    fireEvent.change(starsField, { target: { value: "0" } });
+    fireEvent.click(submitButton);
+    expect(await screen.findByText(/Stars must be between 1 and 5/)).toBeInTheDocument();
+
+  });
+
+  test("Stars cannot be greater than 5", async () => {
+    render(
+      <Router>
+        <MenuItemReviewForm />
+      </Router>,
+    );
+    await screen.findByTestId("MenuItemReviewForm-stars");
+    const starsField = screen.getByTestId("MenuItemReviewForm-stars");
+    const submitButton = screen.getByTestId("MenuItemReviewForm-submit");
+
+    //Testing max
+    fireEvent.change(starsField, { target: { value: "6" } });
+    fireEvent.click(submitButton);
+    expect(await screen.findByText(/Stars must be between 1 and 5/)).toBeInTheDocument();
+  });
+
   test("Correct Error messsages on missing input", async () => {
     render(
       <Router>
@@ -135,5 +168,7 @@ describe("MenuItemReviewForm tests", () => {
     fireEvent.click(cancelButton);
 
     await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(-1));
+
+    
   });
 });

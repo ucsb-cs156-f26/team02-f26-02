@@ -113,11 +113,11 @@ function MenuItemReviewForm({
               required: "Stars is required.",
               min: {
                 value: 1,
-                message: "Stars must be between 1 to 5",
+                message: "Stars must be between 1 and 5",
               },
               max: {
                 value: 5,
-                message: "Stars must be between 1 to 5",
+                message: "Stars must be between 1 and 5",
               },
             })}
           />
