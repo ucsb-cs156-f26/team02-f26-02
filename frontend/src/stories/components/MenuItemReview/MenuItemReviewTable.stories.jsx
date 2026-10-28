@@ -22,13 +22,13 @@ Empty.args = {
 export const ThreeItemsOrdinaryUser = Template.bind({});
 
 ThreeItemsOrdinaryUser.args = {
-  dates: menuItemReviewFixtures.threeDates,
+  dates: menuItemReviewFixtures.threeMenuItemReviews,
   currentUser: currentUserFixtures.userOnly,
 };
 
 export const ThreeItemsAdminUser = Template.bind({});
 ThreeItemsAdminUser.args = {
-  dates: menuItemReviewFixtures.threeDates,
+  dates: menuItemReviewFixtures.threeMenuItemReviews,
   currentUser: currentUserFixtures.adminUser,
 };
 
