@@ -27,6 +27,7 @@ describe("UCSBDiningCommonsMenuItemForm tests", () => {
     expect(
       screen.queryByRole("button", { name: "Create" }),
     ).not.toBeInTheDocument();
+    expect(screen.getByTestId("UCSBDiningCommonsMenuItemForm-submit")).toBeInTheDocument();
   });
 
   test("navigates back when Cancel is clicked without submitting", () => {
@@ -36,6 +37,7 @@ describe("UCSBDiningCommonsMenuItemForm tests", () => {
     fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
     expect(mockedNavigate).toHaveBeenCalledWith(-1);
     expect(submitAction).not.toHaveBeenCalled();
+    expect(screen.getByTestId("UCSBDiningCommonsMenuItemForm-cancel")).toBeInTheDocument();
   });
 
   const fields = [
@@ -86,6 +88,7 @@ describe("UCSBDiningCommonsMenuItemForm tests", () => {
     const submitAction = vi.fn();
     const initialContents = ucsbDiningCommonsMenuItemFixtures.oneMenuItem;
     const { unmount } = renderForm({ initialContents, submitAction });
+    expect(screen.getByTestId("UCSBDiningCommonsMenuItemForm-id")).toBeInTheDocument();
     expect(screen.getByLabelText("Id")).toHaveValue(String(initialContents.id));
     expect(screen.getByLabelText("Id")).toHaveAttribute("readonly");
     fields.forEach(([field]) => {
