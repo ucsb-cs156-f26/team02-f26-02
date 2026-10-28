@@ -25,9 +25,6 @@ function MenuItemReviewForm({
     /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
   // Stryker restore Regex
 
-  // Stryker disable next-line all
-  const yyyyq_regex = /((19)|(20))\d{2}[1-4]/i; // Accepts from 1900-2099 followed by 1-4.  Close enough.
-
   return (
     <Form onSubmit={handleSubmit(submitAction)}>
       <Row>
@@ -99,7 +96,7 @@ function MenuItemReviewForm({
             })}
           />
           <Form.Control.Feedback type="invalid">
-            {errors.dateReviewed && "DateReviewed is required. "}
+            {errors.dateReviewed && "Date Reviewed is required. "}
           </Form.Control.Feedback>
         </Form.Group>
       </Col>
@@ -110,10 +107,18 @@ function MenuItemReviewForm({
           <Form.Control
             data-testid="MenuItemReviewForm-stars"
             id="stars"
-            type="text"
+            type="number"
             isInvalid={Boolean(errors.stars)}
             {...register("stars", {
               required: "Stars is required.",
+              min: {
+                value: 1,
+                message: "Stars must be between 1 to 5",
+              },
+              max: {
+                value: 5,
+                message: "Stars must be between 1 to 5",
+              },
             })}
           />
           <Form.Control.Feedback type="invalid">
