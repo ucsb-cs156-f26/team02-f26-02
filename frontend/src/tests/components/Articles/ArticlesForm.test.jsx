@@ -48,7 +48,7 @@ describe("ArticlesForm tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Router>
-          <ArticlesForm initialContents={articlesFixtures.oneArticle} />
+          <ArticlesForm initialContents={articlesFixtures.oneArticle[0]} />
         </Router>
       </QueryClientProvider>,
     );
@@ -62,6 +62,34 @@ describe("ArticlesForm tests", () => {
 
     expect(await screen.findByTestId(`${testId}-id`)).toBeInTheDocument();
     expect(screen.getByText(`Id`)).toBeInTheDocument();
+  });
+
+  test("submits correctly with a valid ISO date", async () => {
+    const submitAction = vi.fn();
+    const article = articlesFixtures.oneArticle[0];
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ArticlesForm submitAction={submitAction} />
+        </Router>
+      </QueryClientProvider>,
+    );
+
+    for (const field of ["title", "url", "explanation", "email", "dateAdded"]) {
+      fireEvent.change(screen.getByTestId(`${testId}-${field}`), {
+        target: { value: article[field] },
+      });
+    }
+    fireEvent.click(screen.getByTestId(`${testId}-submit`));
+
+    await waitFor(() => expect(submitAction).toHaveBeenCalled());
+    expect(submitAction.mock.calls[0][0].dateAdded).toBe(
+      screen.getByTestId(`${testId}-dateAdded`).value,
+    );
+    expect(
+      screen.queryByText(/Date added is required/),
+    ).not.toBeInTheDocument();
   });
 
   test("that navigate(-1) is called when Cancel is clicked", async () => {

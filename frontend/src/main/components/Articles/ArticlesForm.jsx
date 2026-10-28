@@ -140,15 +140,12 @@ function ArticlesForm({
               type="datetime-local"
               isInvalid={Boolean(errors.dateAdded)}
               {...register("dateAdded", {
-                required: "Date added is required",
-                pattern: {
-                  value: isodate_regex,
-                  message: "Date added must be in ISO format",
-                },
+                required: true,
+                pattern: isodate_regex,
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.dateAdded?.message}
+              {errors.dateAdded && "Date added is required. "}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
