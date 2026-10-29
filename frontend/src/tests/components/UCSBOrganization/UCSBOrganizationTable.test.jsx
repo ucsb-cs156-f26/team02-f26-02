@@ -1,4 +1,3 @@
-
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { ucsbOrganizationFixtures } from "fixtures/ucsbOrganizationFixtures";
