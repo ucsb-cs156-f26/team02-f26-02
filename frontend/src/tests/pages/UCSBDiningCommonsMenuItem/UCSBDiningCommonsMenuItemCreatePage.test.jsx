@@ -80,7 +80,11 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
       render(
         <QueryClientProvider client={queryClient}>
           <MemoryRouter>
-            <UCSBDiningCommonsMenuItemCreatePage storybook={storybook} />
+            {storybook ? (
+              <UCSBDiningCommonsMenuItemCreatePage storybook={true} />
+            ) : (
+              <UCSBDiningCommonsMenuItemCreatePage />
+            )}
           </MemoryRouter>
         </QueryClientProvider>,
       );
