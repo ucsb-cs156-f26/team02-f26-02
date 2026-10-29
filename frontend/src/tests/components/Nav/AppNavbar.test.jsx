@@ -169,7 +169,7 @@ describe("AppNavbar tests", () => {
     expect(link.getAttribute("href")).toBe("/ucsbdates");
   });
 
-  test("renders the restaurants link correctly", async () => {
+  test("renders the restaurants and recommendation request links correctly", async () => {
     const currentUser = currentUserFixtures.userOnly;
     const systemInfo = systemInfoFixtures.showingBoth;
 
@@ -191,6 +191,9 @@ describe("AppNavbar tests", () => {
     const link = screen.getByText("Restaurants");
     expect(link).toBeInTheDocument();
     expect(link.getAttribute("href")).toBe("/restaurants");
+    expect(
+      screen.getByRole("link", { name: "RecommendationRequest" }),
+    ).toHaveAttribute("href", "/recommendationrequest");
   });
 
   test("Restaurant and UCSBDates links do NOT show when not logged in", async () => {
@@ -212,6 +215,7 @@ describe("AppNavbar tests", () => {
 
     expect(screen.queryByText("Restaurants")).not.toBeInTheDocument();
     expect(screen.queryByText("UCSBDates")).not.toBeInTheDocument();
+    expect(screen.queryByText("RecommendationRequest")).not.toBeInTheDocument();
   });
 
   test("when oauthlogin undefined, default value is used", async () => {
