@@ -36,12 +36,14 @@ export default function MenuItemReviewEditPage({ storybook = false }) {
       reviewerEmail: menuItemReview.reviewerEmail,
       stars: menuItemReview.stars,
       dateReviewed: menuItemReview.dateReviewed,
-      comments: menuItemReview.comments
+      comments: menuItemReview.comments,
     },
   });
 
   const onSuccess = (menuItemReview) => {
-    toast(`MenuItemReview Updated - id: ${menuItemReview.id} itemId: ${menuItemReview.itemId}`);
+    toast(
+      `MenuItemReview Updated - id: ${menuItemReview.id} itemId: ${menuItemReview.itemId}`,
+    );
   };
 
   const mutation = useBackendMutation(
