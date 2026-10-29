@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router";
 import { ucsbOrganizationFixtures } from "fixtures/ucsbOrganizationFixtures";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
 import UCSBOrganizationTable from "main/components/UCSBOrganization/UCSBOrganizationTable";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const mockedNavigate = vi.fn();
 
 vi.mock("react-router", async () => {
@@ -32,13 +32,17 @@ describe("UCSBOrganizationTable tests", () => {
   ];
 
   const renderTable = (organizations, currentUser) => {
+    const queryClient = new QueryClient();
+
     return render(
-      <MemoryRouter>
-        <UCSBOrganizationTable
-          organizations={organizations}
-          currentUser={currentUser}
-        />
-      </MemoryRouter>,
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <UCSBOrganizationTable
+            organizations={organizations}
+            currentUser={currentUser}
+          />
+        </MemoryRouter>
+      </QueryClientProvider>,
     );
   };
 
@@ -127,7 +131,7 @@ describe("UCSBOrganizationTable tests", () => {
 
     await waitFor(() => {
       expect(mockedNavigate).toHaveBeenCalledWith(
-        "/ucsborganizations/edit/ENGR",
+        "/ucsborganization/edit/ENGR",
       );
     });
   });
