@@ -26,7 +26,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            dates={articlesFixtures.threeArticles}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -89,7 +89,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            dates={articlesFixtures.threeArticles}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -154,7 +154,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            dates={articlesFixtures.threeArticles}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -175,7 +175,7 @@ describe("ArticlesTable tests", () => {
     fireEvent.click(editButton);
 
     await waitFor(() =>
-      expect(mockedNavigate).toHaveBeenCalledWith("/Articles/edit/2"),
+      expect(mockedNavigate).toHaveBeenCalledWith("/articles/edit/2"),
     );
   });
 
@@ -193,7 +193,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            dates={articlesFixtures.threeArticles}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
