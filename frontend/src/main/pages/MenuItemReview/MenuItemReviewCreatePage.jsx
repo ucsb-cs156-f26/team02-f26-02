@@ -4,7 +4,7 @@ export default function MenuItemReviewCreatePage() {
   // Stryker disable all : placeholder for future implementation
   return (
     <BasicLayout>
-      <div className="pt-2">
+      <div MenuItemReviewCreatePage="pt-2">
         <h1>Create page not yet implemented</h1>
       </div>
     </BasicLayout>
