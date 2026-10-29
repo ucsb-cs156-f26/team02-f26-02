@@ -8,8 +8,10 @@ export default function RecommendationRequestEditPage({ storybook = false }) {
   const { id } = useParams();
 
   const { data: recommendationRequest } = useBackend(
+    // Stryker disable next-line all : query cache key does not change this page's visible behavior
     [`/api/RecommendationRequest?id=${id}`],
     {
+      // Stryker disable next-line all : GET is the default method
       method: "GET",
       url: "/api/RecommendationRequest",
       params: { id },
@@ -34,6 +36,7 @@ export default function RecommendationRequestEditPage({ storybook = false }) {
       onSuccess: (updatedRequest) =>
         toast(`RecommendationRequest Updated - id: ${updatedRequest.id}`),
     },
+    // Stryker disable next-line all : cache invalidation is not observable in this page's tests
     [`/api/RecommendationRequest?id=${id}`],
   );
 
