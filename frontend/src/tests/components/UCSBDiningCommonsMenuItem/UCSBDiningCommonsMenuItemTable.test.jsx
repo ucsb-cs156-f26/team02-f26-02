@@ -9,7 +9,7 @@ import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import { toast } from "react-toastify";
 vi.mock("react-toastify", () => ({
-toast: vi.fn(),
+  toast: vi.fn(),
 }));
 
 const mockedNavigate = vi.fn();
@@ -217,8 +217,12 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     await waitFor(() => expect(axiosMock.history.delete.length).toBe(1));
     expect(axiosMock.history.delete[0].params).toEqual({ id: 1 });
-    expect(axiosMock.history.delete[0].url).toBe("/api/UCSBDiningCommonsMenuItem",);
-    await waitFor(() => {expect(toast).toHaveBeenCalledWith("Menu item deleted");});
+    expect(axiosMock.history.delete[0].url).toBe(
+      "/api/UCSBDiningCommonsMenuItem",
+    );
+    await waitFor(() => {
+      expect(toast).toHaveBeenCalledWith({ message: "Menu item deleted" });
+    });
     axiosMock.restore();
   });
 });
