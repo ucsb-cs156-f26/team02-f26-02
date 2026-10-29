@@ -1,9 +1,11 @@
+
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { ucsbOrganizationFixtures } from "fixtures/ucsbOrganizationFixtures";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
 import UCSBOrganizationTable from "main/components/UCSBOrganization/UCSBOrganizationTable";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 const mockedNavigate = vi.fn();
 
 vi.mock("react-router", async () => {
@@ -103,7 +105,7 @@ describe("UCSBOrganizationTable tests", () => {
     expect(screen.queryByText("Edit")).not.toBeInTheDocument();
   });
 
-  test("shows Edit button for admin user", () => {
+  test("shows Edit and Delete buttons for admin user", () => {
     renderTable(
       ucsbOrganizationFixtures.threeOrganizations,
       currentUserFixtures.adminUser,
@@ -115,6 +117,13 @@ describe("UCSBOrganizationTable tests", () => {
 
     expect(editButton).toBeInTheDocument();
     expect(editButton).toHaveClass("btn-primary");
+
+    const deleteButton = screen.getByTestId(
+      `${testId}-cell-row-0-col-Delete-button`,
+    );
+
+    expect(deleteButton).toBeInTheDocument();
+    expect(deleteButton).toHaveClass("btn-danger");
   });
 
   test("Edit button navigates to edit page", async () => {
@@ -136,7 +145,7 @@ describe("UCSBOrganizationTable tests", () => {
     });
   });
 
-  test("does not show Edit button for ordinary user", () => {
+  test("does not show Edit or Delete buttons for ordinary user", () => {
     renderTable(
       ucsbOrganizationFixtures.threeOrganizations,
       currentUserFixtures.userOnly,
@@ -144,6 +153,10 @@ describe("UCSBOrganizationTable tests", () => {
 
     expect(
       screen.queryByTestId(`${testId}-cell-row-0-col-Edit-button`),
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.queryByTestId(`${testId}-cell-row-0-col-Delete-button`),
     ).not.toBeInTheDocument();
   });
 });
