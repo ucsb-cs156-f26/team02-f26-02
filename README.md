@@ -8,16 +8,15 @@ Deployments:
 * Prod: <https://team02.dokku-02.cs.ucsb.edu>
 * QA: <https://team02-qa.dokku-02.cs.ucsb.edu>
 
-TODO: Fill in this table with correct information. 
 
-| Table                     | Name         | Github Id |
-|---------------------------|--------------|-----------|
-| UCSBDiningCommonsMenuItem |              |           |
-| UCSBOrganization          |              |           |
-| RecommendationRequest     |              |           |
-| MenuItemReview            |              |           |
-| HelpRequest               |              |           |
-| Articles                  |              |           |
+| Table                     | Name         | Github Id         |
+|---------------------------|--------------|-------------------|
+| UCSBDiningCommonsMenuItem | Eshaan       | ekuchhal          |
+| UCSBOrganization          | Matthew      | matthewvnguyen110 |
+| RecommendationRequest     | Wayne        | Ooiuut            |
+| MenuItemReview            | Timothy      | timothyhu1        |
+| HelpRequest               | (unassigned) |                   |
+| Articles                  | Zach         | zsjkwon           |
 
 Remember though, that in spite of these initial  assignments, it is still
 a team project.  Please help other team members to finish their work
