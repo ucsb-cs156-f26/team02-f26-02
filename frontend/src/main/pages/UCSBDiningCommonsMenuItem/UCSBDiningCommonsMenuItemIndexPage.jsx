@@ -13,20 +13,12 @@ export default function UCSBDiningCommonsMenuItemIndexPage() {
       createElement(
         "p",
         null,
-        createElement(
-          "a",
-          { href: "/diningcommonsmenuitem/create" },
-          "Create",
-        ),
+        createElement("a", { href: "/diningcommonsmenuitem/create" }, "Create"),
       ),
       createElement(
         "p",
         null,
-        createElement(
-          "a",
-          { href: "/diningcommonsmenuitem/edit/1" },
-          "Edit",
-        ),
+        createElement("a", { href: "/diningcommonsmenuitem/edit/1" }, "Edit"),
       ),
     ),
   );
