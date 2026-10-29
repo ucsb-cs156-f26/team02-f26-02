@@ -26,7 +26,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <MenuItemReviewTable
-            dates={menuItemReviewFixtures.threeMenuItemReviews}
+            reviews={menuItemReviewFixtures.threeMenuItemReviews}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -86,7 +86,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <MenuItemReviewTable
-            dates={menuItemReviewFixtures.threeMenuItemReviews}
+            reviews={menuItemReviewFixtures.threeMenuItemReviews}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -148,7 +148,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <MenuItemReviewTable
-            dates={menuItemReviewFixtures.threeMenuItemReviews}
+            reviews={menuItemReviewFixtures.threeMenuItemReviews}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -187,7 +187,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <MenuItemReviewTable
-            dates={menuItemReviewFixtures.threeMenuItemReviews}
+            reviews={menuItemReviewFixtures.threeMenuItemReviews}
             currentUser={currentUser}
           />
         </MemoryRouter>

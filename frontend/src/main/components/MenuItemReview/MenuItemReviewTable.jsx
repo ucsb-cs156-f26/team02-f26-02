@@ -9,7 +9,7 @@ import {
 import { useNavigate } from "react-router";
 import { hasRole } from "main/utils/useCurrentUser";
 
-export default function MenuItemReviewTable({ dates, currentUser }) {
+export default function MenuItemReviewTable({ reviews, currentUser }) {
   const navigate = useNavigate();
 
   const editCallback = (cell) => {
@@ -67,6 +67,6 @@ export default function MenuItemReviewTable({ dates, currentUser }) {
   }
 
   return (
-    <OurTable data={dates} columns={columns} testid={"MenuItemReviewTable"} />
+    <OurTable data={reviews} columns={columns} testid={"MenuItemReviewTable"} />
   );
 }
