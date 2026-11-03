@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-02
 owner: ucsb-cs156-f26
 repo_name: team02-f26-02
-pull_requests: [{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"wh-jpa04-e2e","number":120,"title":"Add RecommendationRequest end-to-end tests","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/120"},{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"wh-jpa04-integration","number":119,"title":"Add RecommendationRequest delete integration test","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/119"}]
+pull_requests: [{"author":{"id":"U_kgDOCe8YoQ","is_bot":false,"login":"Ooiuut","name":""},"headRefName":"wh-jpa04-e2e","number":120,"title":"Add RecommendationRequest end-to-end tests","url":"https://github.com/ucsb-cs156-f26/team02-f26-02/pull/120"}]
